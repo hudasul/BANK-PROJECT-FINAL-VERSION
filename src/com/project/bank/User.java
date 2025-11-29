@@ -13,6 +13,8 @@ public abstract class User {
     private Integer failed_login_attempts;
     private LocalDateTime lockUntil;
 
+    public User() {}
+
     public User(String first_name, String last_name, String role, String id,String password) {
         this.first_name = first_name;
         this.last_name = last_name;
@@ -23,8 +25,18 @@ public abstract class User {
         lockUntil=null;
     }
 
+
+
+    public boolean checkPassword(String userPass, String inputPass){
+        return inputPass.equals(userPass);
+    }
+
     public abstract String getRole ();
 
+    public void resetLock(){
+        lockUntil=null;
+        failed_login_attempts=0;
+    }
     public boolean isLocked(){
         return lockUntil != null && LocalDateTime.now().isBefore(lockUntil);
     }
