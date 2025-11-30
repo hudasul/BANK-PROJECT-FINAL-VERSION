@@ -1,10 +1,10 @@
-# project1-bank
-1-As a user i want to be able to create a user account and log in
+# project1-bankAs a user, I want to create an account and log in so that I can securely access my bank services.
+1 - As a user, I want to deposit, withdraw, and transfer money to my own or other users’ accounts so that I can manage my finances easily.
 
-2-as a user i want to be able to be able to withdraw , deposit and transfer money to other account whether they are mine or not 
+2 - As a user, I want my account to be locked after multiple failed login attempts so that my account is protected from fraudulent access.
 
-3-as a user i want to have a fraudulent activity security measurement as when someone tries to log into my account multiple times and fails my account needs to be locked
+3 - As a user, I want to view my transaction history so that I can track my spending and account activity.
 
-4-as a user i want to be able to view the transactions history for my accounts
+4 - As a user, I want to view my account details, including my balance and personal information, so that I can monitor my finances and verify my information.
 
-5-as a user i want to be able to view my accounts details including the balance and other personal details .
+5 - As a user, I want to create an account and log in so that I can securely access my bank services.

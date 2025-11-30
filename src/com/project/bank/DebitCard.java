@@ -46,9 +46,8 @@ public abstract class DebitCard {
         }
     }
     public boolean Withdraw(double amount) {
-        dailyReset();
         if (usedWithdrawToday + amount <= dailyWithdrawLimit) {
-            usedWithdrawToday += amount;
+           // usedWithdrawToday += amount;
             return true;
         }
         return false;
@@ -58,7 +57,7 @@ public abstract class DebitCard {
         dailyReset();
         double limit = isOwnAccount ? dailyOwnTransferLimit : dailyTransferLimit;
         if (usedTransferToday + amount <= limit) {
-            usedTransferToday += amount;
+           // usedTransferToday += amount;
             return true;
         }
         return false;
@@ -68,7 +67,7 @@ public abstract class DebitCard {
         dailyReset();
         double limit = isOwnAccount ? dailyOwnDepositLimit : dailyDepositLimit;
         if (usedDepositToday + amount <= limit) {
-            usedDepositToday += amount;
+           // usedDepositToday += amount;
             return true;
         }
         return false;
