@@ -9,7 +9,7 @@ public abstract class Account {
     private int overdraftCount;
     private DebitCard debitCard;
 
-    public Account(String accountId, String customerId, String accountType, boolean isActive, double balance, int overdraftCount, DebitCard debitCard) {
+    public Account(String accountId, String customerId, String accountType, boolean isActive, double balance, DebitCard debitCard) {
         this.accountId = accountId;
         this.customerId = customerId;
         this.accountType = accountType;
