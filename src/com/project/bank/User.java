@@ -27,8 +27,8 @@ public abstract class User {
 
 
 
-    public boolean checkPassword(String userPass, String inputPass){
-        return inputPass.equals(userPass);
+    public boolean checkPassword( String inputPass){
+        return PasswordUtils.verifyPassword(inputPass,password);
     }
 
     public abstract String getRole ();
@@ -48,7 +48,7 @@ public abstract class User {
     }
 
     public String getFullName(){
-        return this.first_name+this.last_name;
+        return this.first_name+" "+this.last_name;
     }
     public String getFirst_name() {
         return first_name;
@@ -74,7 +74,4 @@ public abstract class User {
         this.id = id;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
 }

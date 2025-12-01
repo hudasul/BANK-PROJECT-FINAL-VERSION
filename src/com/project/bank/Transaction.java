@@ -5,14 +5,15 @@ import java.time.LocalDateTime;
 public class Transaction {
     private String transactionId;
     private String accountId;
-    private LocalDateTime dateTime;
+    private LocalDateTime date;
     private String type;
+    private Account receiver;
     private double amount;
 
-    public Transaction(String transactionId, String accountId, LocalDateTime dateTime, String type, double amount) {
+    public Transaction(String transactionId, String accountId, LocalDateTime date, String type, double amount) {
         this.transactionId = transactionId;
         this.accountId = accountId;
-        this.dateTime = dateTime;
+        this.date = date;
         this.type = type;
         this.amount = amount;
     }
@@ -34,11 +35,11 @@ public class Transaction {
     }
 
     public LocalDateTime getDateTime() {
-        return dateTime;
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDateTime(LocalDateTime date) {
+        this.date = date;
     }
 
     public double getAmount() {

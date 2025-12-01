@@ -16,7 +16,20 @@ public abstract class BankServices {
 
     }
 
-    public void transfer (Account account){
+    public void transfer (Account account , Account target , double amount){
+
+
+        if(account.getCustomerId().equals(target.getCustomerId())){
+
+            if(account.getDebitCard().getDailyOwnDepositLimit()<=amount){
+                account.getDebitCard().setDailyOwnTransferLimit(amount+account.getDebitCard().getDailyOwnDepositLimit());
+                account.setBalance(account.getBalance()-amount);
+                target.setBalance(target.getBalance()+amount);
+
+
+
+            }
+        }
 
 
 
