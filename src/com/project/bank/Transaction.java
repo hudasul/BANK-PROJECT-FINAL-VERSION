@@ -10,13 +10,14 @@ public class Transaction {
     private Account receiver;
     private double amount;
 
-    public Transaction(String transactionId, String accountId, LocalDateTime date, String type, double amount) {
+
+    public Transaction(String transactionId, String type, double amount){
         this.transactionId = transactionId;
-        this.accountId = accountId;
-        this.date = date;
         this.type = type;
         this.amount = amount;
+        this.date = LocalDateTime.now();
     }
+
 
     public String getTransactionId() {
         return transactionId;

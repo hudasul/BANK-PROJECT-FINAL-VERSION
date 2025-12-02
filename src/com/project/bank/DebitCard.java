@@ -45,29 +45,30 @@ public abstract class DebitCard {
             lastResetDate = today;
         }
     }
-    public boolean Withdraw(double amount) {
+    public boolean withdraw(double amount) {
         if (usedWithdrawToday + amount <= dailyWithdrawLimit) {
-           // usedWithdrawToday += amount;
+            dailyReset();
+            usedWithdrawToday += amount;
             return true;
         }
         return false;
     }
 
-    public boolean Transfer(double amount, boolean isOwnAccount) {
+    public boolean transfer(double amount, boolean isOwnAccount) {
         dailyReset();
         double limit = isOwnAccount ? dailyOwnTransferLimit : dailyTransferLimit;
         if (usedTransferToday + amount <= limit) {
-           // usedTransferToday += amount;
+            usedTransferToday += amount;
             return true;
         }
         return false;
     }
 
-    public boolean Deposit(double amount, boolean isOwnAccount) {
+    public boolean deposit(double amount, boolean isOwnAccount) {
         dailyReset();
         double limit = isOwnAccount ? dailyOwnDepositLimit : dailyDepositLimit;
         if (usedDepositToday + amount <= limit) {
-           // usedDepositToday += amount;
+            usedDepositToday += amount;
             return true;
         }
         return false;
@@ -167,4 +168,5 @@ public abstract class DebitCard {
     public void setUsedDepositToday(double usedDepositToday) {
         this.usedDepositToday = usedDepositToday;
     }
+
 }
