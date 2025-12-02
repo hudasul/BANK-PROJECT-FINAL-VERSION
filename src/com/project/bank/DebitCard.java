@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 public abstract class DebitCard {
     private String cardId;
     private String accountId;
+    private String userId;
     private String cardType;
     private double dailyWithdrawLimit;
     private double dailyTransferLimit;
@@ -17,12 +18,13 @@ public abstract class DebitCard {
     private double usedDepositToday;
     private LocalDate lastResetDate;
 
-    public DebitCard(String cardId, String accountId, String cardType,
+    public DebitCard(String cardId, String accountId, String cardType, String userId ,
                      double dailyWithdrawLimit, double dailyTransferLimit,
                      double dailyOwnTransferLimit, double dailyDepositLimit,
                      double dailyOwnDepositLimit) {
         this.cardId = cardId;
         this.accountId = accountId;
+        this.userId=userId;
         this.cardType = cardType;
         this.dailyWithdrawLimit = dailyWithdrawLimit;
         this.dailyTransferLimit = dailyTransferLimit;
@@ -64,8 +66,9 @@ public abstract class DebitCard {
         return false;
     }
 
-    public boolean deposit(double amount, boolean isOwnAccount) {
+    public boolean deposit(double amount , Account target) {
         dailyReset();
+       boolean isOwnAccount = this.accountId.equals(target.getAccountId());
         double limit = isOwnAccount ? dailyOwnDepositLimit : dailyDepositLimit;
         if (usedDepositToday + amount <= limit) {
             usedDepositToday += amount;

@@ -2,7 +2,7 @@ package com.project.bank;
 
 import java.util.ArrayList;
 
-public abstract class Account {
+public abstract class Account implements IAccount {
     private String accountId;
     private String customerId;
     private String accountType;
