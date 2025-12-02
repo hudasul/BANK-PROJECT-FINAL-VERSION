@@ -12,7 +12,7 @@ public class PasswordHasher implements IPasswordHasher{
     @Override
     public String encypt(String pass) {
 
-        String hashedPassword = BCrypt.hashpw(pass, BCrypt.gensalt());
+        String hashedPassword = BCrypt.hashpw(pass, BCrypt.gensalt(12));
         
         return hashedPassword;
 
