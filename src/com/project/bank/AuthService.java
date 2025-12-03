@@ -5,13 +5,13 @@ import java.util.UUID;
 
 public class AuthService {
 
-    PasswordHasher hasher;
+    PasswordHasher hasher = new PasswordHasher();
     public Customer register(String firstName, String lastName, String email, String password){
         String hashed = hasher.encypt(password);
         String id = UUID.randomUUID().toString();
         Customer customer = new Customer(firstName, lastName, id, hashed, email);
 
-        try(PrintWriter pw = new PrintWriter(new FileWriter("Customer-"+firstName+"-"+id+".txt"))){
+        try(PrintWriter pw = new PrintWriter(new FileWriter("Customer-"+email+".txt"))){
             pw.println(firstName);
             pw.println(lastName);
             pw.println(email);
