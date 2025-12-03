@@ -7,12 +7,14 @@ public class Transaction {
     private String accountId;
     private LocalDateTime date;
     private String type;
-    private Account receiver;
+    private String receiver;
     private double amount;
 
 
-    public Transaction(String transactionId, String type, double amount){
+    public Transaction(String transactionId,String accountId, String type, double amount,String receiver){
         this.transactionId = transactionId;
+        this.accountId=accountId;
+        this.receiver=receiver;
         this.type = type;
         this.amount = amount;
         this.date = LocalDateTime.now();

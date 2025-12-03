@@ -10,8 +10,8 @@ public class Customer extends User{
     private String status ;
     private ArrayList<Account> accounts;
 
-    public Customer(String firstName, String lastName, String id, String password) {
-        super(firstName, lastName, "Customer", id, password);
+    public Customer(String firstName, String lastName, String id, String password,String email) {
+        super(firstName, lastName, "Customer", id, password,email);
         this.status = "Active";
         this.accounts = new ArrayList<>();
     }

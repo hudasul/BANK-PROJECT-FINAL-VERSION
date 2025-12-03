@@ -48,8 +48,8 @@ public abstract class DebitCard {
         }
     }
     public boolean withdraw(double amount) {
+        dailyReset();
         if (usedWithdrawToday + amount <= dailyWithdrawLimit) {
-            dailyReset();
             usedWithdrawToday += amount;
             return true;
         }
@@ -66,16 +66,16 @@ public abstract class DebitCard {
         return false;
     }
 
-    public boolean deposit(double amount , Account target) {
+    public boolean deposit(double amount, boolean isOwnAccount){
         dailyReset();
-       boolean isOwnAccount = this.userId.equals(target.getDebitCard().userId);
         double limit = isOwnAccount ? dailyOwnDepositLimit : dailyDepositLimit;
-        if (usedDepositToday + amount <= limit) {
+        if(usedDepositToday + amount <= limit){
             usedDepositToday += amount;
             return true;
         }
         return false;
     }
+
     public String getCardId() {
         return cardId;
     }

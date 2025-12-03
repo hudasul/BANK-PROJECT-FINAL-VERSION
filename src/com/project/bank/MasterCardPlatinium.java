@@ -2,8 +2,8 @@ package com.project.bank;
 
 public class MasterCardPlatinium extends DebitCard{
 
-        public MasterCardPlatinium(String cardId, String accountId) {
-            super(cardId, accountId, "MasterCardPlatinium",
+        public MasterCardPlatinium(String cardId, String accountId,String userId) {
+            super(cardId, accountId, "MasterCardPlatinium", userId,
                     5000, 20000, 50000, 20000, 100000);
         }
 
