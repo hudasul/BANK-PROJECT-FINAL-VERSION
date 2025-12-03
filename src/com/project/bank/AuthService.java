@@ -6,27 +6,44 @@ import java.util.UUID;
 public class AuthService {
 
     PasswordHasher hasher;
-    public Account login(String email , String input){
-      //if(hasher.check())
-        //find user by email from files later , then verify that user hasedpass with input using passhsh
-        return null;
+    public Customer register(String firstName, String lastName, String email, String password){
+        String hashed = hasher.encypt(password);
+        String id = UUID.randomUUID().toString();
+        Customer customer = new Customer(firstName, lastName, id, hashed, email);
 
+        try(PrintWriter pw = new PrintWriter(new FileWriter("Customer-"+firstName+"-"+id+".txt"))){
+            pw.println(firstName);
+            pw.println(lastName);
+            pw.println(email);
+            pw.println(id);
+            pw.println(hashed);
+        } catch(IOException e){
+            return null;
+        }
+        return customer;
     }
-    public Account register(String email,String firstName , String lastName  , String input){
+    public Customer login(String email, String password){
 
-        //find user by email from files later , if he exists return null, if he doesnt exist will create the user with a hashed pass word
-         String hashed = hasher.encypt(input);
-         UUID randomId = UUID.randomUUID();
+        File f = new File("Customer-" + email + ".txt");
 
-        try(PrintWriter pw = new PrintWriter(new FileWriter("Customer-"+firstName+"-"+randomId+".txt"))) {
+        if(!f.exists()) return null;
 
-        }
-        catch (IOException e){
+        try(BufferedReader br = new BufferedReader(new FileReader(f))){
+            String fName = br.readLine();
+            String lName = br.readLine();
+            String userEmail = br.readLine();
+            String userId = br.readLine();
+            String hashed = br.readLine();
+
+            if(hasher.check(password, hashed)){
+                return new Customer(fName, lName, userId, hashed, userEmail);
+            }
+
+        } catch(IOException e){
 
         }
 
         return null;
-
     }
 
 
