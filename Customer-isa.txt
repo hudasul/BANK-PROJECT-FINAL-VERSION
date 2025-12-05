@@ -1,0 +1,6 @@
+
+isa
+isa
+adb630d4-6c53-41fe-ba49-50f2f196aa86
+$2a$12$FS9eB9vOUfimk5IaklWGJOW.IZlmRsAIKRm31bCS8PXCtgqlFKPBm
+com.project.bank.SavingAccount@3eb07fd3

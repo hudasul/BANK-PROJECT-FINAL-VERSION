@@ -2,6 +2,7 @@ package com.project.bank;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public abstract class DebitCard {
     private String cardId;
@@ -22,7 +23,8 @@ public abstract class DebitCard {
                      double dailyWithdrawLimit, double dailyTransferLimit,
                      double dailyOwnTransferLimit, double dailyDepositLimit,
                      double dailyOwnDepositLimit) {
-        this.cardId = cardId;
+        //this will be assigbed automatically , i will not remove the ids from all 4 cards im too lazy so ill just put one to shut it up
+        this.cardId = UUID.randomUUID().toString();
         this.accountId = accountId;
         this.userId=userId;
         this.cardType = cardType;
@@ -146,6 +148,14 @@ public abstract class DebitCard {
 
     public void setDailyOwnDepositLimit(double dailyOwnDepositLimit) {
         this.dailyOwnDepositLimit = dailyOwnDepositLimit;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public double getUsedWithdrawToday() {

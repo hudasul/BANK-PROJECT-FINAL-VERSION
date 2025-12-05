@@ -1,0 +1,6 @@
+m
+m
+m
+3bf100f9-1e35-46ce-bb6c-b2f60ac95c69
+$2a$12$a5NT6tfFvmpjbkbJ7Z3MWu9CLkuX2C1D/NskzJ7uMV8dUKIHlg/g.
+Account{accountId='36681e2f-8cbd-4809-b2b4-a5bf618be316', customerId='1', accountType='Saving', balance=0.0, isActive=true, overdraftCount=0, debitCard=com.project.bank.MasterCard@3eb07fd3, transactions=[]}

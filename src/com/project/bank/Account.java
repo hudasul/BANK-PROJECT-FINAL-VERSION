@@ -1,6 +1,7 @@
 package com.project.bank;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public abstract class Account implements IAccount {
     private String accountId;
@@ -21,8 +22,8 @@ public abstract class Account implements IAccount {
         this.transactions = transactions;
     }
 
-    public Account(String accountId, String customerId, String accountType, boolean isActive, double balance, DebitCard debitCard) {
-        this.accountId = accountId;
+    public Account(String customerId, String accountType, boolean isActive, double balance, DebitCard debitCard) {
+        this.accountId = UUID.randomUUID().toString();
         this.customerId = customerId;
         this.accountType = accountType;
         this.isActive = isActive;
@@ -37,25 +38,25 @@ public abstract class Account implements IAccount {
         return accountId;
     }
 
-//    public void setAccountId(String accountId) {
-//        this.accountId = accountId;
-//    }
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
 
     public String getCustomerId() {
         return customerId;
     }
 
-//    public void setCustomerId(String customerId) {
-//        this.customerId = customerId;
-//    }
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
     public String getAccountType() {
         return accountType;
     }
 
-//    public void setAccountType(String accountType) {
-//        this.accountType = accountType;
-//    }
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
 
     public boolean isActive() {
         return isActive;
@@ -92,7 +93,22 @@ public abstract class Account implements IAccount {
         this.overdraftCount=0;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId='" + accountId + '\'' +
+                ", customerId='" + customerId + '\'' +
+                ", accountType='" + accountType + '\'' +
+                ", balance=" + balance +
+                ", isActive=" + isActive +
+                ", overdraftCount=" + overdraftCount +
+                ", debitCard=" + debitCard +
+                ", transactions=" + transactions +
+                '}';
+    }
+
     public void addTransaction(Transaction t) {
         transactions.add(t);
     }
 }
+

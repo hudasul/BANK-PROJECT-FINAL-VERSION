@@ -1,5 +1,6 @@
 package com.project.bank;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginMenu {
@@ -15,7 +16,8 @@ public class LoginMenu {
             System.out.println("3. Exit");
             System.out.print("Choose: ");
 
-            int choice = Integer.parseInt(sc.nextLine());
+            int choice = sc.nextInt();
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
@@ -50,24 +52,90 @@ public class LoginMenu {
         System.out.print("password: ");
         String confPass = sc.nextLine();
 
-       if (confPass.equals(pass)){ Customer c = auth.register(first, last, email, pass);
-        if (c == null) {
-            System.out.println("Error creating account.");
+        System.out.println("select an option 1-3");
+        System.out.println("1-Saving account");
+        System.out.println("2-checking account");
+        System.out.println("3-both");
+        int selectionAccTypes = sc.nextInt();
+        sc.nextLine();
+
+        Account accType;
+        MasterCard mockCard = new MasterCard("s", "S", "s");
+
+        switch (selectionAccTypes) {
+            case 1:
+                accType = new SavingAccount("1", "1", mockCard);
+                break;
+            case 2:
+                accType = new CheckingAccount("1", "1", mockCard);
+                break;
+            case 3:
+                accType = new SavingAccount("1", "1", mockCard);
+                break;
+            default:
+                accType = new SavingAccount("1", "1", mockCard);
+        }
+
+        System.out.println("Select card type (number please 1-3):");
+        System.out.println("1-MasterCard");
+        System.out.println("2-Titanium MasterCard");
+        System.out.println("1-Platinium MasterCard");
+
+        int selectCardType = sc.nextInt();
+        sc.nextLine(); // fix: consume leftover newline
+
+        String cardType;
+        DebitCard card;
+        switch (selectCardType) {
+            case 1:
+                cardType = "1";
+                card = new MasterCard("010", "10", "1");
+                break;
+            case 2:
+                cardType = "2";
+                card = new MasterCardTitanium("11", "10", "1");
+                break;
+            case 3:
+                cardType = "3";
+                card = new MasterCardPlatinium("11", "10", "1");
+                break;
+            default:
+                cardType = "MasterCard";
+                card = new MasterCard("11", "10", "1");
+                break;
+        }
+
+        if (confPass.equals(pass)) {
+            ArrayList<Account> accounts = new ArrayList<>();
+            accounts.add(accType);
+            Customer c = auth.register(first, last, email, pass, accounts);
+            card.setAccountId(accType.getAccountId());
+            card.setUserId(c.getId());
+            accType.setCustomerId(c.getId());
+            c.addAccount(accType);
+
+            if (selectionAccTypes == 3) {
+                CheckingAccount secondAccount = new CheckingAccount("generatedId2", c.getId(), card);
+                c.addAccount(secondAccount);
+            }
+
+            if (c == null) {
+                System.out.println("Error creating account.");
+            } else {
+                System.out.println("Registered successfully! Please log in.");
+            }
         } else {
-            System.out.println("Registered successfully! Please log in.");
-        }}
-       else {
-           System.out.println("Password dont match");
-       }
+            System.out.println("Password dont match");
+        }
     }
 
     private void login() {
         System.out.println("----- Login -----");
 
-        System.out.print("Email: ");
+        System.out.println("Email: ");
         String email = sc.nextLine();
 
-        System.out.print("Password: ");
+        System.out.println("Password: ");
         String pass = sc.nextLine();
 
         Customer customer = auth.login(email, pass);
@@ -77,7 +145,5 @@ public class LoginMenu {
         }
 
         System.out.println("Login successful. Welcome " + customer.getFullName() + "!");
-
-
     }
 }

@@ -1,12 +1,13 @@
 package com.project.bank;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.UUID;
 
 
 public class AuthService {
 
     PasswordHasher hasher = new PasswordHasher();
-    public Customer register(String firstName, String lastName, String email, String password){
+    public Customer register(String firstName, String lastName, String email, String password, ArrayList<Account>accounts){
         String hashed = hasher.encypt(password);
         String id = UUID.randomUUID().toString();
         Customer customer = new Customer(firstName, lastName, id, hashed, email);
@@ -17,6 +18,8 @@ public class AuthService {
             pw.println(email);
             pw.println(id);
             pw.println(hashed);
+//            pw.println(accounts.stream().map(e->e));
+            accounts.forEach(e-> pw.println(e));
         } catch(IOException e){
             return null;
         }
