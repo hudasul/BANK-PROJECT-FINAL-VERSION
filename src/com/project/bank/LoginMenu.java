@@ -143,7 +143,9 @@ public class LoginMenu {
             System.out.println("Invalid email or password.");
             return;
         }
+        //System.out.println(customer);
 
         System.out.println("Login successful. Welcome " + customer.getFullName() + "!");
+        new UserMenu().run(customer);
     }
 }

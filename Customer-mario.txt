@@ -1,0 +1,6 @@
+mario
+maria
+mario
+8384bbba-2660-4263-b93a-087a44865714
+$2a$12$wPAxNITUmjIKaiebBoqQbexdXrIGplEml2Z9kdiOvMbxvGMzZ67Qy
+ACCOUNT|0506005e-75a1-4335-9937-bd3fc63c9fec|1|Saving|0.0|true|0|CARD|bd71d59a-cbbe-4557-8ee0-f79b991608ef|MasterCard|500.0|1000.0|1000.0

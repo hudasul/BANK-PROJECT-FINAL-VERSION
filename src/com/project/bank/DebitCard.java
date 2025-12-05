@@ -182,4 +182,13 @@ public abstract class DebitCard {
         this.usedDepositToday = usedDepositToday;
     }
 
+    public String toString() {
+        return "CARD|" +
+                cardId + "|" +
+                cardType + "|" +
+                dailyWithdrawLimit + "|" +
+                dailyDepositLimit + "|" +
+                dailyTransferLimit;
+    }
+
 }

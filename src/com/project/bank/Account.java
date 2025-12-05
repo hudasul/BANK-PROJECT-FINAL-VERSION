@@ -95,17 +95,23 @@ public abstract class Account implements IAccount {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "accountId='" + accountId + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", accountType='" + accountType + '\'' +
-                ", balance=" + balance +
-                ", isActive=" + isActive +
-                ", overdraftCount=" + overdraftCount +
-                ", debitCard=" + debitCard +
-                ", transactions=" + transactions +
-                '}';
+        String base = "ACCOUNT|"
+                + accountId + "|"
+                + customerId + "|"
+                + accountType + "|"
+                + balance + "|"
+                + isActive + "|"
+                + overdraftCount;
+
+        if (debitCard != null) {
+            return base + "|" + debitCard;
+        } else {
+            return base;
+        }
     }
+
+
+
 
     public void addTransaction(Transaction t) {
         transactions.add(t);
