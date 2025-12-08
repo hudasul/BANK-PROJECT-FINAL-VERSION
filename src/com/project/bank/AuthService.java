@@ -60,7 +60,7 @@ public class AuthService {
             String firstAccountLine = null;
 
             if(nextLine != null && nextLine.startsWith("LOCK:")) {
-                String[] lockParts = nextLine.split(":", 3);
+                String[] lockParts = nextLine.split(":", 3); // Limit to 3 parts so timestamp stays intact
                 if(lockParts.length >= 3) {
                     try {
                         int failedAttempts = Integer.parseInt(lockParts[1]);

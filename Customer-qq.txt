@@ -1,0 +1,7 @@
+qq
+qq
+qq
+ba4e5547-d7b9-4f3f-8f77-cf8f92861f98
+$2a$12$F2wj/33oAR5rgytXTTGQ2O9m8u.ROD4alyweOsgJoskRhr2m10a6y
+LOCK:0:null
+ACCOUNT:d9490e3e-7bbe-479d-bae0-484b137fa1e2:Saving:50000.0:true:MasterCard:0.0:0.0:0.0:50000.0:0.0:2025-12-09:0

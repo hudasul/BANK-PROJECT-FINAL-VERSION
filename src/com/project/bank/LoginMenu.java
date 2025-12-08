@@ -48,7 +48,7 @@ public class LoginMenu {
 
         System.out.print("password: ");
         String pass = sc.nextLine();
-        System.out.print("confirm password: ");
+        System.out.print("password: ");
         String confPass = sc.nextLine();
 
         System.out.println("select an option 1-3");
