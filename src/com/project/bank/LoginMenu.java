@@ -265,19 +265,16 @@ public class LoginMenu {
                 FileStorageService.updateCustomerFile(customer, email);
             }
         } else if (depositChoice == 2) {
-            // Deposit to another person's account
-            System.out.print("Enter recipient's email: ");
+            System.out.print("Enter target email: ");
             String recipientEmail = sc.nextLine();
 
-            // Try to load recipient customer
-            Customer recipient = auth.login(recipientEmail, ""); // We'll need to modify this
+            Customer recipient = auth.login(recipientEmail, "");
             if (recipient == null) {
-                // Try to load without password check
                 recipient = loadCustomerByEmail(recipientEmail);
             }
 
             if (recipient == null || recipient.getAccounts().isEmpty()) {
-                System.out.println("✗ Recipient not found or has no accounts.");
+                System.out.println("Recipient not found or has no accounts.");
                 return;
             }
 
@@ -349,7 +346,6 @@ public class LoginMenu {
                                 card = new MasterCard(accountId, userId, accountId);
                         }
 
-                        // Load daily limits if available
                         if(parts.length >= 10) {
                             try {
                                 double usedWithdraw = Double.parseDouble(parts[6]);
@@ -362,11 +358,9 @@ public class LoginMenu {
                                 card.setUsedDepositToday(usedDeposit);
                                 card.setLastResetDate(lastReset);
                             } catch (Exception e) {
-                                // If parsing fails, use defaults
                             }
                         }
 
-                        // Create account based on type
                         Account account;
                         if(accountType.equals("Checking")) {
                             account = new CheckingAccount(userId, accountId, card);
@@ -378,7 +372,6 @@ public class LoginMenu {
                         account.setBalance(balance);
                         account.setActive(isActive);
 
-                        // Load transaction history
                         FileStorageService.loadTransactions(account);
 
                         customer.addAccount(account);
@@ -449,7 +442,6 @@ public class LoginMenu {
         String recipientEmail = null;
 
         if (transferChoice == 1) {
-            // Transfer to own account
             if (customer.getAccounts().size() < 2) {
                 System.out.println("You only have one account.");
                 return;
@@ -467,11 +459,9 @@ public class LoginMenu {
             recipient = customer;
             recipientEmail = email;
         } else if (transferChoice == 2) {
-            // Transfer to another customer's account
             System.out.print("Enter recipient's email: ");
             recipientEmail = sc.nextLine();
 
-            // Load recipient customer
             recipient = loadCustomerByEmail(recipientEmail);
 
             if (recipient == null || recipient.getAccounts().isEmpty()) {
@@ -506,10 +496,8 @@ public class LoginMenu {
         sc.nextLine();
 
         if(bankService.transfer(fromAccount, toAccount, amount)) {
-            // Update sender's file
             FileStorageService.updateCustomerFile(customer, email);
 
-            // Update recipient's file if different person
             if (!email.equals(recipientEmail)) {
                 FileStorageService.updateCustomerFile(recipient, recipientEmail);
             }
@@ -668,7 +656,7 @@ public class LoginMenu {
             }
 
             System.out.println("----------------------------------------------------------------");
-            System.out.println("Total Transactions: " + account.getTransactions().size());
+            System.out.println("Total Transactions:" + account.getTransactions().size());
         }
 
         System.out.println();

@@ -10,6 +10,12 @@ public class AuthService {
     PasswordHasher hasher = new PasswordHasher();
 
     public Customer register(String firstName, String lastName, String email, String password, ArrayList<Account>accounts){
+        File existingFile = new File("Customer-" + email + ".txt");
+        if(existingFile.exists()) {
+            System.out.println(" Registration failed! Email already exists.");
+            return null;
+        }
+
         String hashed = hasher.encypt(password);
         String id = UUID.randomUUID().toString();
         Customer customer = new Customer(firstName, lastName, id, hashed, email);
@@ -22,6 +28,7 @@ public class AuthService {
             pw.println(hashed);
 
             pw.println("LOCK:0:null");
+
             for(Account acc : accounts) {
                 pw.println("ACCOUNT:" + acc.getAccountId() + ":" + acc.getAccountType() + ":" +
                         acc.getBalance() + ":" + acc.isActive() + ":" + acc.getDebitCard().getClass().getSimpleName());
@@ -65,17 +72,17 @@ public class AuthService {
                             tempCustomer.setLockUntil(lockUntil);
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             } else {
-
                 tempCustomer.setFailedLoginAttempts(0);
                 tempCustomer.setLockUntil(null);
                 firstAccountLine = nextLine;
             }
 
             if(tempCustomer.isLocked()) {
-                System.out.println("Account is locked for 1 minute.");
+                System.out.println("Account is locked for 1 minute due to multiple failed login attempts.");
                 System.out.println("Please try again later.");
                 return null;
             }
@@ -141,16 +148,20 @@ public class AuthService {
                     card = new MasterCard(accountId, userId, accountId);
             }
 
-            if(parts.length >= 10) {
+            if(parts.length >= 12) {
                 try {
                     double usedWithdraw = Double.parseDouble(parts[6]);
-                    double usedTransfer = Double.parseDouble(parts[7]);
-                    double usedDeposit = Double.parseDouble(parts[8]);
-                    java.time.LocalDate lastReset = java.time.LocalDate.parse(parts[9]);
+                    double usedOwnTransfer = Double.parseDouble(parts[7]);
+                    double usedExternalTransfer = Double.parseDouble(parts[8]);
+                    double usedOwnDeposit = Double.parseDouble(parts[9]);
+                    double usedExternalDeposit = Double.parseDouble(parts[10]);
+                    java.time.LocalDate lastReset = java.time.LocalDate.parse(parts[11]);
 
                     card.setUsedWithdrawToday(usedWithdraw);
-                    card.setUsedTransferToday(usedTransfer);
-                    card.setUsedDepositToday(usedDeposit);
+                    card.setUsedOwnTransferToday(usedOwnTransfer);
+                    card.setUsedExternalTransferToday(usedExternalTransfer);
+                    card.setUsedOwnDepositToday(usedOwnDeposit);
+                    card.setUsedExternalDepositToday(usedExternalDeposit);
                     card.setLastResetDate(lastReset);
                 } catch (Exception e) {
                 }
@@ -167,9 +178,9 @@ public class AuthService {
             account.setBalance(balance);
             account.setActive(isActive);
 
-            if(parts.length >= 11) {
+            if(parts.length >= 13) {
                 try {
-                    int overdraftCount = Integer.parseInt(parts[10]);
+                    int overdraftCount = Integer.parseInt(parts[12]);
                     for(int i = 0; i < overdraftCount; i++) {
                         account.incrementOverdraft();
                     }

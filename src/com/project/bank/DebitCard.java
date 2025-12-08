@@ -15,15 +15,16 @@ public abstract class DebitCard {
     private double dailyDepositLimit;
     private double dailyOwnDepositLimit;
     private double usedWithdrawToday;
-    private double usedTransferToday;
-    private double usedDepositToday;
+    private double usedOwnTransferToday;
+    private double usedExternalTransferToday;
+    private double usedOwnDepositToday;
+    private double usedExternalDepositToday;
     private LocalDate lastResetDate;
 
     public DebitCard(String cardId, String accountId, String cardType, String userId ,
                      double dailyWithdrawLimit, double dailyTransferLimit,
                      double dailyOwnTransferLimit, double dailyDepositLimit,
                      double dailyOwnDepositLimit) {
-        //this will be assigbed automatically , i will not remove the ids from all 4 cards im too lazy so ill just put one to shut it up
         this.cardId = UUID.randomUUID().toString();
         this.accountId = accountId;
         this.userId=userId;
@@ -34,8 +35,10 @@ public abstract class DebitCard {
         this.dailyDepositLimit = dailyDepositLimit;
         this.dailyOwnDepositLimit = dailyOwnDepositLimit;
         this.usedWithdrawToday = 0;
-        this.usedTransferToday = 0;
-        this.usedDepositToday = 0;
+        this.usedOwnTransferToday = 0;
+        this.usedExternalTransferToday = 0;
+        this.usedOwnDepositToday = 0;
+        this.usedExternalDepositToday = 0;
         this.lastResetDate = LocalDate.now();
     }
     public abstract void showCardDetails();
@@ -44,8 +47,10 @@ public abstract class DebitCard {
         LocalDate today = LocalDate.now();
         if(lastResetDate.isBefore(today)){
             usedWithdrawToday = 0;
-            usedTransferToday = 0;
-            usedDepositToday = 0;
+            usedOwnTransferToday = 0;
+            usedExternalTransferToday = 0;
+            usedOwnDepositToday = 0;
+            usedExternalDepositToday = 0;
             lastResetDate = today;
         }
     }
@@ -60,20 +65,32 @@ public abstract class DebitCard {
 
     public boolean transfer(double amount, boolean isOwnAccount) {
         dailyReset();
-        double limit = isOwnAccount ? dailyOwnTransferLimit : dailyTransferLimit;
-        if (usedTransferToday + amount <= limit) {
-            usedTransferToday += amount;
-            return true;
+        if (isOwnAccount) {
+            if (usedOwnTransferToday + amount <= dailyOwnTransferLimit) {
+                usedOwnTransferToday += amount;
+                return true;
+            }
+        } else {
+            if (usedExternalTransferToday + amount <= dailyTransferLimit) {
+                usedExternalTransferToday += amount;
+                return true;
+            }
         }
         return false;
     }
 
     public boolean deposit(double amount, boolean isOwnAccount){
         dailyReset();
-        double limit = isOwnAccount ? dailyOwnDepositLimit : dailyDepositLimit;
-        if(usedDepositToday + amount <= limit){
-            usedDepositToday += amount;
-            return true;
+        if (isOwnAccount) {
+            if (usedOwnDepositToday + amount <= dailyOwnDepositLimit) {
+                usedOwnDepositToday += amount;
+                return true;
+            }
+        } else {
+            if (usedExternalDepositToday + amount <= dailyDepositLimit) {
+                usedExternalDepositToday += amount;
+                return true;
+            }
         }
         return false;
     }
@@ -166,20 +183,36 @@ public abstract class DebitCard {
         this.usedWithdrawToday = usedWithdrawToday;
     }
 
-    public double getUsedTransferToday() {
-        return usedTransferToday;
+    public double getUsedOwnTransferToday() {
+        return usedOwnTransferToday;
     }
 
-    public void setUsedTransferToday(double usedTransferToday) {
-        this.usedTransferToday = usedTransferToday;
+    public void setUsedOwnTransferToday(double usedOwnTransferToday) {
+        this.usedOwnTransferToday = usedOwnTransferToday;
     }
 
-    public double getUsedDepositToday() {
-        return usedDepositToday;
+    public double getUsedExternalTransferToday() {
+        return usedExternalTransferToday;
     }
 
-    public void setUsedDepositToday(double usedDepositToday) {
-        this.usedDepositToday = usedDepositToday;
+    public void setUsedExternalTransferToday(double usedExternalTransferToday) {
+        this.usedExternalTransferToday = usedExternalTransferToday;
+    }
+
+    public double getUsedOwnDepositToday() {
+        return usedOwnDepositToday;
+    }
+
+    public void setUsedOwnDepositToday(double usedOwnDepositToday) {
+        this.usedOwnDepositToday = usedOwnDepositToday;
+    }
+
+    public double getUsedExternalDepositToday() {
+        return usedExternalDepositToday;
+    }
+
+    public void setUsedExternalDepositToday(double usedExternalDepositToday) {
+        this.usedExternalDepositToday = usedExternalDepositToday;
     }
 
 }
