@@ -1,0 +1,8 @@
+huda
+sultan
+huda@gmail.com
+e86ea96c-a27c-4871-965a-10516eca7c95
+$2a$12$R5EzPFeJAVAxk/horxm1buSIGKjYdtV8vVs7aXJOu1v.iG57gbCY6
+LOCK:3:2025-12-09T10:09:37.705998
+ACCOUNT:eb962144-7b96-4380-b335-bfc5fe87ce4c:Saving:185000.0:true:MasterCard:5000.0:0.0:10000.0:200000.0:0.0:2025-12-09:0
+ACCOUNT:07ee5ee8-6e44-4b4e-9787-dea48c3579c0:Checking:-270.0:false:MasterCardTitanium:400.0:0.0:0.0:200.0:0.0:2025-12-09:2

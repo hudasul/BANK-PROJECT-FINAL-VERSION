@@ -1,0 +1,7 @@
+ali
+sultan
+ali@gmail.com
+9417a7ea-9b3d-424f-9c65-40d39bd877d2
+$2a$12$1A82cewZQWcR39zg1qCDJevVpGFNLiArdmbuoSt7ikisPY1vLH8Ry
+LOCK:0:null
+ACCOUNT:662278fc-eda6-4d71-a9a8-522b5785acaa:Checking:110000.0:true:MasterCardPlatinium:0.0:0.0:0.0:0.0:100000.0:2025-12-09:0
