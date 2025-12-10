@@ -1,0 +1,8 @@
+Alice
+Test
+alice@test.com
+091211fc-4b3b-40b6-9f00-8a09e33f39c5
+$2a$12$OF1QeNFeIn2oiIn9SSX4E.92xOOhB26Zr0DM0vqhZmZS0GF/.FdYC
+LOCK:3:2025-12-10T14:38:43.864529
+BANKER:false
+ACCOUNT:149baf92-974b-47bf-a5dd-57974d373779:Saving:0.0:true:MasterCardPlatinium:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

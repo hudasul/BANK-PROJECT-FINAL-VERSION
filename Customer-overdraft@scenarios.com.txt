@@ -1,0 +1,8 @@
+Overdraft
+Scenarios
+overdraft@scenarios.com
+5372d085-4460-49e6-aa2f-4a1626789144
+$2a$12$cxxXoV/BvIJ7j2Qun6bgjeeZxs7ZRQU9nyXP7rD3k1t2xaWZxh.26
+LOCK:0:null
+BANKER:false
+ACCOUNT:bf21f1dd-b009-4a7d-b878-90bb10699dbc:Saving:-670.0:false:MasterCard:1600.0:0.0:0.0:1000.0:0.0:2025-12-10:2

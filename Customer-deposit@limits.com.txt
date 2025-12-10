@@ -1,0 +1,8 @@
+Deposit
+Test
+deposit@limits.com
+328c8f04-760f-425d-87f1-1aa5a133c239
+$2a$12$HFNhLTeSt//ZlHPLiP2v3.YMdbHQWZKvVCWaptRkVQW4YSRBLvOpG
+LOCK:0:null
+BANKER:false
+ACCOUNT:89501658-e0a3-44d5-b904-cff22e0e4187:Saving:200000.0:true:MasterCard:0.0:0.0:0.0:200000.0:0.0:2025-12-10:0

@@ -51,6 +51,10 @@ public class LoginMenu {
         System.out.print("password: ");
         String confPass = sc.nextLine();
 
+        System.out.println("Are you registering as a banker? (y/n): ");
+        String bankerChoice = sc.nextLine().toLowerCase();
+        boolean isBanker = bankerChoice.equals("y") || bankerChoice.equals("yes");
+
         System.out.println("select an option 1-3");
         System.out.println("1-Saving account");
         System.out.println("2-checking account");
@@ -154,6 +158,11 @@ public class LoginMenu {
             if (c == null) {
                 System.out.println("Error creating account.");
             } else {
+                // Set banker status if selected
+                if (isBanker) {
+                    c.setIsBanker(true);
+                }
+
                 for(Account acc : accounts) {
                     acc.setCustomerId(c.getId());
                     acc.getDebitCard().setUserId(c.getId());
@@ -183,7 +192,8 @@ public class LoginMenu {
             return;
         }
 
-        System.out.println("Login successful. Welcome " + customer.getFullName() + "!");
+        String roleMessage = customer.isBanker() ? "Welcome Banker " : "Welcome Customer ";
+        System.out.println("Login successful. " + roleMessage + customer.getFullName() + "!");
         customerMenu(customer, email);
     }
 
@@ -384,9 +394,9 @@ public class LoginMenu {
 
                         Account account;
                         if(accountType.equals("Checking")) {
-                            account = new CheckingAccount(userId, accountId, card);
+                            account = new CheckingAccount(accountId, userId, card);
                         } else {
-                            account = new SavingAccount(userId, accountId, card);
+                            account = new SavingAccount(accountId, userId, card);
                         }
 
                         account.setAccountId(accountId);
@@ -406,6 +416,14 @@ public class LoginMenu {
                         FileStorageService.loadTransactions(account);
 
                         customer.addAccount(account);
+                    }
+                } else if(line.startsWith("BANKER:")) {
+                    try {
+                        boolean isBanker = Boolean.parseBoolean(line.split(":")[1]);
+                        customer.setIsBanker(isBanker);
+                    } catch (Exception e) {
+                        // Default to false if parsing fails
+                        customer.setIsBanker(false);
                     }
                 }
             }

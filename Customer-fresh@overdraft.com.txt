@@ -1,0 +1,8 @@
+Fresh
+Overdraft
+fresh@overdraft.com
+8f19295c-a133-4ab9-a394-d71d4b103e9e
+$2a$12$UbR6D/Gw./NXQUE/eha.a.sqZWTlzjmojJJTVzCgoHqeXVgnleBJC
+LOCK:0:null
+BANKER:false
+ACCOUNT:0fc69687-131e-43dc-9c88-8c4f213e0799:Saving:-535.0:true:MasterCard:1500.0:0.0:0.0:1000.0:0.0:2025-12-10:1

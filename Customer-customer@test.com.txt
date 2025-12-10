@@ -1,0 +1,8 @@
+Jane
+Customer
+customer@test.com
+df52c297-41e4-422f-8f6f-49c7c14a8cd8
+$2a$12$GojqU6ZxINhE49QO.L2xNeawEMKaadvtCFaYJAwOAWlD4Bq1ggP0W
+LOCK:0:null
+BANKER:false
+ACCOUNT:7040a3a2-213b-425f-bb2b-893b2283746f:Saving:0.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

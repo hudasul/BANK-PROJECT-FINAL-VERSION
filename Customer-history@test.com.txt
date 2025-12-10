@@ -1,0 +1,9 @@
+History
+Test
+history@test.com
+1e686ebd-ad74-47af-8f2f-ddc4e2942bd2
+$2a$12$PAKS0dGs8E4H1.KTk/7ioeWIHIaqCSr5IclMolsQ6lMKTE6kdFw5S
+LOCK:0:null
+BANKER:false
+ACCOUNT:02a8d47a-ac83-4eb5-8cd9-5246d9ab1c1a:Saving:8000.0:true:MasterCard:0.0:2000.0:0.0:10000.0:0.0:2025-12-10:0
+ACCOUNT:6d3e4a23-ada4-4fc5-b90a-ce8d37534a01:Checking:2000.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

@@ -1,0 +1,8 @@
+Master
+Card
+mastercard@limits.com
+fbc0ab93-6ee7-44a6-9401-c90b0dd44736
+$2a$12$LgGqlxNkMTzO1cmDfw.oeO1BC8Cz8549/N5u/aIsV2vB8kvcE.SPO
+LOCK:2:null
+BANKER:false
+ACCOUNT:d5763ad4-cb40-4a2f-a6f0-1201c5faa4b8:Saving:115000.0:true:MasterCard:5000.0:0.0:0.0:10000.0:100000.0:2025-12-10:0

@@ -1,0 +1,9 @@
+Charlie
+Transfer
+charlie@test.com
+32fb1312-00a0-4481-b6d9-f25d2c117341
+$2a$12$mYp9nZq//qGnAJM/UXmYzujLgW4Pq9aeZ586sxHodHbGDzssZ/Oh2
+LOCK:0:null
+BANKER:false
+ACCOUNT:fb64a684-1e4f-40ae-ac8b-179e49b200b5:Saving:45000.0:true:MasterCard:0.0:0.0:5000.0:50000.0:0.0:2025-12-10:0
+ACCOUNT:691cfe2d-7227-4813-9390-db8787c6ebb9:Checking:5000.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

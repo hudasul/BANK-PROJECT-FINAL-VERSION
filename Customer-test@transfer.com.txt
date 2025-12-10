@@ -1,0 +1,9 @@
+Test
+Transfer
+test@transfer.com
+6a04ab94-52ee-463e-aefe-10261d6ec44d
+$2a$12$t71cDspS/FHayLmxIxpFs.cd.ET6f8SOojMeZkw9h/TyzAGkWOJlq
+LOCK:0:null
+BANKER:false
+ACCOUNT:8bb40777-e993-40e2-a1f3-94cb385fcc39:Saving:30000.0:true:MasterCard:0.0:20000.0:0.0:50000.0:0.0:2025-12-10:0
+ACCOUNT:3ac37c4a-edaf-4107-a012-fdd224b19e10:Checking:20000.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

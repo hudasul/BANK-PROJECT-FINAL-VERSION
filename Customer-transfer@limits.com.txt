@@ -1,0 +1,9 @@
+Transfer
+Test
+transfer@limits.com
+98291995-f646-41f0-b7d8-f6e75c0f129b
+$2a$12$8e3UMYaNNn9xnJ7AcFAecuIy3DLAvLiRSoPifqa0K.51cDV3W1zjC
+LOCK:0:null
+BANKER:false
+ACCOUNT:5ab6c8f6-4dab-4de8-9bea-a0f3779f6ad5:Saving:20000.0:true:MasterCard:0.0:20000.0:10000.0:50000.0:0.0:2025-12-10:0
+ACCOUNT:b0e7ae88-cb73-4225-b8ca-b5ee6eac0920:Checking:20000.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

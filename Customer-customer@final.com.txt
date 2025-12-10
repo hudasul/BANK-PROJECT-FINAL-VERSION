@@ -1,0 +1,8 @@
+Jane
+Customer
+customer@final.com
+eecaf030-3439-41b8-a4bc-e8ee2d69eaf7
+$2a$12$U.uoH/n98Zgy4UfoRY5TCO3ZJOHpMI5nYluKPxwZjNUeOJnclvIcK
+LOCK:3:2025-12-10T14:52:09.077608
+BANKER:false
+ACCOUNT:33705696-3f45-45e0-8f91-ba5fbbf5a679:Saving:0.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

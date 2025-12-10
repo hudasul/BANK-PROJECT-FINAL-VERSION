@@ -1,0 +1,8 @@
+Over
+Draft
+overdraft@test.com
+12551cb4-50b6-4370-b273-169ec5bbd490
+$2a$12$jptQTHpBXizTxlFohbEKiOT9RaM46ZIkwHoFnafujZsXfUOXbghfi
+LOCK:0:null
+BANKER:false
+ACCOUNT:d445cbfa-1cf1-4b76-8fb9-9b79a10885fb:Saving:500.0:true:MasterCard:4500.0:0.0:0.0:5000.0:0.0:2025-12-10:0

@@ -1,0 +1,8 @@
+David
+Limits
+david@test.com
+2a2b1581-fe96-4d8f-b2ed-e9bc63d39e3a
+$2a$12$nIcWmgPjH6FhLNphHYcK5.VvM4ANnYyXpZ4L6yQkf8q8QvlsOV/Lm
+LOCK:0:null
+BANKER:false
+ACCOUNT:c0340498-9504-4ee1-a2c5-b27e88fc9c4b:Saving:10000.0:true:MasterCard:0.0:0.0:0.0:10000.0:0.0:2025-12-10:0

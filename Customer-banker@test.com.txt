@@ -1,0 +1,8 @@
+John
+Banker
+banker@test.com
+6ac5037a-5518-4040-b72f-a1bc286a8ce2
+$2a$12$IgxjBP9Gzv2cjB/ENroIZ.byUxLg5xmk4ZFefkvNANXZri6DrQWci
+LOCK:0:null
+BANKER:true
+ACCOUNT:818b9167-9f78-4c95-88f2-0afc0052c214:Saving:0.0:true:MasterCardPlatinium:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

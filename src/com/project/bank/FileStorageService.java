@@ -39,6 +39,8 @@ public class FileStorageService {
 
             pw.println("LOCK:" + customer.getFailedLoginAttempts() + ":" +
                     (customer.getLockUntil() != null ? customer.getLockUntil().toString() : "null"));
+            
+            pw.println("BANKER:" + customer.isBanker());
 
             for (Account account : customer.getAccounts()) {
                 DebitCard card = account.getDebitCard();

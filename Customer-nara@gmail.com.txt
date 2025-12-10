@@ -1,0 +1,9 @@
+nara
+ali
+nara@gmail.com
+81b2ab81-5ccf-4f7f-8f66-0d8a539e5c05
+$2a$12$eZSBN52z83eFEI/pddr0qO1XXXXe8f9E1bFGtbpj3wzDLu30oBz.q
+LOCK:0:null
+BANKER:true
+ACCOUNT:95330259-bac8-4b21-b374-1d57b7daa057:Saving:199998.0:true:MasterCard:0.0:0.0:2.0:200000.0:0.0:2025-12-10:0
+ACCOUNT:b333fb0f-8215-47ff-9c18-71f2e2e57c05:Checking:2.0:true:MasterCard:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

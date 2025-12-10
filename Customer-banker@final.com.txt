@@ -1,0 +1,8 @@
+John
+Banker
+banker@final.com
+43986f11-489b-4a1c-b4f6-262585356fab
+$2a$12$bAudbDq.Z.ZLbxLwkXHWHuRU6nmWLIJqux3yXowBXpMO7KhpEavEa
+LOCK:0:null
+BANKER:true
+ACCOUNT:a4244136-d0d2-4304-91ee-6ad59089b962:Saving:0.0:true:MasterCardPlatinium:0.0:0.0:0.0:0.0:0.0:2025-12-10:0

@@ -1,0 +1,8 @@
+Bob
+Deposit
+bob@test.com
+cca8750f-061e-4389-88ee-45dcb3c9d881
+$2a$12$RyPXGErPPinhfwnPlLDFpO5fB9haUmKvmRfQwgY0661zOzwScHkxm
+LOCK:0:null
+BANKER:false
+ACCOUNT:efb46fd5-d160-4e5b-a82e-aee4575e2fc7:Saving:-2035.0:true:MasterCardPlatinium:12000.0:0.0:0.0:10000.0:0.0:2025-12-10:1

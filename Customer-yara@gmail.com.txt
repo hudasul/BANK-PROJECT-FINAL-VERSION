@@ -1,0 +1,9 @@
+yara
+yara
+yara@gmail.com
+339ed028-f023-40cf-8d55-1cdf3d964eb1
+$2a$12$nSc2.Kxl2nZb5LA3Vmb3G.PsG0O.IL51NHKpd8jOK7yND9UPBcyZa
+LOCK:0:null
+BANKER:true
+ACCOUNT:4d01d2f0-e46a-42c0-8fa3-ea92ec6ec77d:Saving:0.0:true:MasterCardTitanium:0.0:0.0:0.0:0.0:0.0:2025-12-10:0
+ACCOUNT:d7397086-59e8-47bf-90ed-012375b04530:Checking:0.0:true:MasterCardPlatinium:0.0:0.0:0.0:0.0:0.0:2025-12-10:0
